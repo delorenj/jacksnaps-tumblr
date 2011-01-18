@@ -1,0 +1,846 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!--
+
+ , _  _____    __
+/|/ \() |     / ()  _,              |)   _ |\ |\
+ |__/   |    |     / |  /|/|/|  |/\_|/\_|/ |/ |/
+ |    (/      \___/\/|_/ | | |_/|_/  \/ |_/|_/|_/
+                               (|
+
+  Inkhorn by http://ptcampbell.me
+
+-->
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>{Title} {block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
+    <link rel="shortcut icon" href="{Favicon}" />
+    <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+    <!-- YUI Reset CSS -->
+    <link rel="stylesheet" type="text/css" media="screen" href="http://static.tumblr.com/fkm6sn6/YbRl5zqmg/reset-min.css"/>
+    <link href='http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT' rel='stylesheet' type='text/css'/>
+		{block:Description}<meta name="description" content="{MetaDescription}"/>{/block:Description}
+    <!-- Tumblr Appearance Settings -->
+    <meta name="if:Single Column" content="0" />
+    <meta name="image:Header" content="http://static.tumblr.com/fkm6sn6/59Xlce272/header_white.png"/>
+    <meta name="if:Show Title" content="1"/>
+    <meta name="if:Top Navigation Drawer" content="1"/>
+    <meta name="if:To Top Button" content="1"/>
+    <meta name="color:Background" content="#F7F7F7"/>
+    <meta name="color:Content Background" content="#FFFFFF"/>
+    <meta name="color:Stripe" content="#F7F7F7"/>
+    <META NAME="KEYWORDS" CONTENT="word-salad,words,nonsense,salad,funny,stupid,random,randomness,horse,billiards,boots,tractors,sheep,jacksnaps,poetry,poetic,poem,poems,comical,retarded,birds,shoes,sharks">
+    <!-- JS -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://static.tumblr.com/fkm6sn6/lbNl5zqhv/jquery.scrollto-1.4.2-min.js"></script>
+    <script type="text/javascript" src="http://static.tumblr.com/fkm6sn6/9Rwl699bz/jquery.masonry.js"></script>
+<script src="http://connect.facebook.net/en_US/all.js#xfbml=1">
+    <!-- Masonry onLoad -->
+    <script type="text/javascript">
+      $(window).load(function () {
+        $('#mason').masonry();
+      });
+    </script>
+    <!-- Top Drawer Code-->
+    <script type="text/javascript" src="http://static.tumblr.com/fkm6sn6/uFWlbyg0u/drawer.js"></script>
+    <!-- Scroll Code -->
+		{block:IfToTopButton}
+    <script type="text/javascript" src="http://static.tumblr.com/fkm6sn6/KPql5zqgf/jquery.localscroll-1.2.7-min.js"></script>
+    <script type="text/javascript">
+      <!--
+      $(document).ready(function()
+      {
+        $.localScroll({
+          queue:true,
+          duration:1000
+        });
+      });
+      -->
+    </script>
+    <script type="text/javascript">
+      $(function () {
+        $(window).scroll(function () {
+          if ($(this).scrollTop() != 0) {
+            $('#toTop').fadeIn();
+          } else {
+            $('#toTop').fadeOut();
+          }
+        });
+        $('#toTop').click(function () {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+          800);
+        });
+      });
+    </script>
+		{/block:IfToTopButton}
+
+    <style type="text/css">
+
+      /* INKHORN CSS */
+
+      body {
+        font-size:0.875em;
+        font-family:Georgia,'Times New Roman',serif;
+        margin:0;
+      }
+
+      p {
+        font-family:Georgia,'Times New Roman',serif;
+        line-height:1.45em;
+        margin-bottom:1.45em;
+      }
+
+      p:last-of-type {
+        margin-bottom:0.725em;
+      }
+
+      strong {
+        font-weight:700;
+      }
+
+      a:hover {
+        color:rgb(0,0,0);
+        color:rgba(0,0,0,.4);
+      }
+
+      em {
+        font-style:italic;
+      }
+
+      h1 {
+        font-family:'OFL Sorts Mill Goudy TT', Georgia, serif;
+        font-size:2.5em;
+        margin-bottom:25px;
+      }
+
+      h1 a:link,h1 a:visited,h3 a:link,h3 a:visited {
+        color:rgb(0,0,0);
+        color:rgba(0,0,0,.8);
+        text-decoration:none;
+      }
+
+      h3 {
+        font-family:'OFL Sorts Mill Goudy TT', Georgia, serif;
+        font-size:1.56em;
+        line-height:2.5em;
+        font-weight:700;
+        margin-bottom:.4em;
+      }
+
+      #sliderWrap {
+        width:100%;
+      }
+
+      #slider {
+        position:absolute;
+        background:url(http://static.tumblr.com/fkm6sn6/sU9lcaggb/navbg.png) repeat-x;
+        background-position:bottom;
+        width:100%;
+        height:41px;
+        margin-top:-31px;
+      }
+
+      #sliderContent {
+        position:absolute;
+        width:99%;
+        padding:0.714em 0em 0em .429em;
+      }
+
+      #toTop {
+        width:59px;
+        height:53px;
+        background:url(http://static.tumblr.com/fkm6sn6/AvWlb7jjb/totop.png);
+        position:fixed;
+        bottom:20px;
+        right:0;
+        cursor:pointer;
+        display:none;
+      }
+
+      #main{
+        width:750px;
+        height:100%;
+        padding:0px 15px 0px 15px;
+        margin:0 auto;
+      }
+
+      #openCloseWrap {
+        position:absolute;
+        font-size:0.857em;
+        font-weight:700;
+        margin:0em 0em 0em 3.5em;
+      }
+
+      .header{
+        padding-top:40px;
+        margin-bottom:40px;
+      }
+
+      .headerimage{
+        margin-bottom:25px;
+      }
+
+      .linebreak{
+        margin:0px auto;
+        background-color:rgb(0,0,0);
+        background-color:rgba(0, 0, 0, 0.8);
+        width:35px;
+        height:10px;
+      }
+
+      .centre {
+        text-align:center;
+      }
+
+      .footer {
+        color:rgb(0,0,0);
+        color: rgba(0, 0, 0, 0.4);
+        font-size: 0.714em;
+        letter-spacing: 2px;
+        padding: 20px 0px 40px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .footer p {
+        margin-bottom:0em;
+      }
+
+      .footer a:link,.footer a:visited {
+        color:rgb(0,0,0);
+        color:rgba(0, 0, 0, 0.8);
+        text-decoration:none;
+      }
+
+      .footer a:hover {
+        color:rgb(0,0,0);
+        color:rgba(0, 0, 0, 0.6);
+      }
+
+      .content {
+        width:700px;
+      }
+
+      .post {
+        width:270px;
+        float:left;
+        text-align:justify;
+        margin:0px 0px 30px 60px;
+      }
+
+      .clear {
+        clear:both;
+      }
+
+      blockquote {
+        border-left:2px solid rgba(0,0,0,.2);
+        margin:15px 0 15px 15px;
+        padding:0 15px;
+      }
+
+      .chat table {
+        width:270px;
+        line-height:1.2;
+        margin:10px 0;
+      }
+
+      .chat td,.chat th {
+        vertical-align:baseline;
+        padding:0.571em 0.714em 0.714em;
+      }
+
+      .chat th {
+        text-transform:uppercase;
+        font-size:0.714em;
+        letter-spacing:0.143em;
+        padding-right:0;
+        text-align:right;
+      }
+
+      .chat .user1 th,.chat .user1 td {
+        background:rgba(0,0,0,.05);
+      }
+
+      .chat .user2 th,.chat .user2 td {
+        background:rgba(0,0,0,.1);
+      }
+
+      .chat .user3 th,.chat .user3 td {
+        background:rgba(0,0,0,.15);
+      }
+
+      .chat .user4 th,.chat .user4 td {
+        background:rgba(0,0,0,.2);
+      }
+
+      .photo p,.video p {
+        text-align:left;
+        font-style:italic;
+        margin:5px 0;
+      }
+
+      .player {
+        background:rgba(0,0,0,.05);
+        text-align:center;
+        margin-bottom:10px;
+        padding:23px;
+      }
+
+      .notes {
+        border-top:2px solid rgba(0,0,0,.2);
+        margin:35px 0;
+      }
+
+      .notes li {
+        border-bottom:1px solid rgba(0, 0, 0, 0.2);
+        list-style:inside none;
+        padding:.75em 0 .9em;
+      }
+
+      .notes li a {
+        text-decoration:none;
+      }
+
+      .notes blockquote {
+        border-left:2px solid rgba(0,0,0,.2);
+        margin:.5em 0 0 .5em;
+        padding:0 .5em;
+      }
+
+      .quote p{
+        text-align:right;
+      }
+
+      .quote h3{
+        text-align:right;
+      }
+
+      .quote.short h3 {
+        font-size:1.571em;
+        line-height:28px;
+        padding-left:25px;
+        background:url(http://static.tumblr.com/fkm6sn6/dYIlcdkfu/quote.png) no-repeat top left;
+      }
+
+      .quote.medium h3,.quote.long h3 {
+        font-size:1.143em;
+        padding-left:25px;
+        line-height:22px;
+        background:url(http://static.tumblr.com/fkm6sn6/dYIlcdkfu/quote.png) no-repeat top left;
+      }
+
+      .post.permalink h3 {
+        font-size:1.571em;
+        line-height:27px;
+        text-align:center;
+        background:url(http://static.tumblr.com/fkm6sn6/dYIlcdkfu/quote.png) no-repeat top left;
+        padding:0 28px;
+      }
+
+      .timestamp {
+        text-transform:uppercase;
+        letter-spacing:2px;
+        font-size:0.714em;
+        color:rgb(0, 0, 0);
+        color:rgba(0, 0, 0, 0.6);
+      }
+
+      .timestamp_right {
+        text-transform:uppercase;
+        letter-spacing:2px;
+        font-size:0.714em;
+        text-align:right;
+        color:rgb(0, 0, 0);
+        color:rgba(0, 0, 0, 0.6);
+      }
+
+      .timestamp a:link,.timestamp a:visited,.timestamp_right a:link,.timestamp_right a:visited {
+        color:rgb(0, 0, 0);
+        color:rgba(0, 0, 0, 0.6);
+        text-decoration:none;
+      }
+
+      .timestamp a:hover {
+        color:rgb(0, 0, 0);
+        color:rgba(0, 0, 0, 0.4);
+      }
+
+      .pagination {
+        padding:5px 0;
+      }
+
+      .subtitle {
+        text-transform:uppercase;
+        letter-spacing:2px;
+        margin:0px auto;
+        margin-bottom:25px;
+        padding:10px;
+        border-top:1px solid;
+        border-bottom:1px solid;
+        width:230px;
+        line-height:25px;
+      }
+
+      .pages li{
+        display:inline;
+        text-transform:uppercase;
+        letter-spacing:2px;
+        margin-right:1em;
+      }
+
+      .pages a:link,.footer a:visited {
+        color:rgb(0,0,0);
+        color:rgba(0, 0, 0, 0.8);
+        text-decoration:none;
+      }
+
+      .pages li a:hover {
+        color: rgba(0, 0, 0, 0.597656);
+        text-decoration:none;
+      }
+
+      .pages a:link,.footer a:visited {
+        color:rgb(0,0,0);
+        color:rgba(0, 0, 0, 0.8);
+        text-decoration:none;
+      }
+
+
+      .pages{
+        margin-bottom:25px;
+      }
+
+      .bodytype ul,.bodytype ol {
+        margin:1.35em 2em;
+      }
+
+      .bodytype ol li {
+        list-style-type:decimal;
+      }
+
+      .bodytype li {
+        line-height:1.4;
+        list-style-type:disc;
+        margin:.45em 0;
+      }
+
+      .bodytype ol ol,.bodytype ul ul {
+        margin:.75em 2em;
+      }
+
+      .bodytype li ol li {
+        list-style-type:lower-alpha;
+      }
+
+      .bodytype li ul li {
+        list-style-type:circle;
+      }
+
+      #menu {
+        width:780px;
+        position:relative;
+        margin:0 auto;
+        padding:0;
+      }
+
+      #menu li {
+        display:inline;
+      }
+
+      #menu .leftside li {
+        padding-right:10px;
+      }
+
+      #menu .leftside {
+        float:left;
+      }
+
+      #menu .rightside {
+        float:right;
+      }
+
+      #search {
+        position:absolute;
+        right:0;
+        top:-5px;
+      }
+
+      #search_field {
+        background:url("http://static.tumblr.com/fkm6sn6/IV8lbt8qk/search.png") #363331 140px 5px;
+        background-repeat:no-repeat;
+        border:1px solid #4e4d4c;
+        color:#4E4D4C;
+        -moz-border-radius:5px;
+        -webkit-border-radius:5px;
+        padding-left:10px;
+        height:22px;
+        width:152px;
+        font-size:0.857em;
+      }
+
+      a:link,a:visited,h1 a:hover,h3 a:hover {
+        color:rgba(0,0,0);
+        color:rgba(0,0,0,.6);
+      }
+
+      .single .post,.single .chat table {
+        width:600px;
+      }
+
+      .photo,.video {
+        background:rgba(0,0,0,.05);
+        padding:10px;
+      }
+
+      .notes img.avatar,#search_button {
+        display:none;
+      }
+
+#the_like {
+  padding-left:200px;
+}
+    </style>
+
+    <style type="text/css">
+      body {
+        background-color:{color:Background};
+      }
+      #main{
+        background-color:{color:Content Background};
+      }
+      #innerborder{
+        border-left:15px solid {color:Stripe};
+      border-right:15px solid {color:Stripe};
+      }
+      {block:IfSingleColumn}
+      .post {
+        width:520px;
+        text-align:justify;
+        margin:0px auto;
+        margin-bottom:50px;
+        float:none;
+      }
+      .single .post,.single .chat table {
+        width:520px;
+      }
+      #main {
+        width:700px;
+      }
+      .post h3{
+        text-align:center;
+        padding:0px 28px;
+      }
+      .timestamp, .timestamp_right{
+        text-align:center;
+        float:none;
+        margin-top:20px;
+      }
+      .chat table{
+        width:520px;
+      }
+      .quote h3{
+        text-align:center;
+        padding-left:30px;
+      }
+      .quote p{
+        text-align:center;
+      }
+      .audio{
+        text-align:center;
+      }
+      #menu{
+        width:730px;
+      }
+      .photo p,.video p {
+        text-align:center;
+        font-style:normal;
+        margin:0px;
+      }
+      .photo {
+        text-align:center;
+        background:none;
+        padding:0px;
+      }
+      .photo img{
+        background:rgba(0,0,0,.05);
+        padding:10px;
+        margin-bottom:15px;
+      }
+      {/block:IfSingleColumn}
+      {CustomCSS}
+    </style> <!-- Tumblr Appearance Options CSS -->
+
+  </head> <!-- CLOSE HEAD -->
+
+  <body>
+			{block:IfTopNavigationDrawer} <div id="sliderWrap">
+      <div id="openCloseIdentifier"></div>
+      <div id="slider">
+        <div id="sliderContent">
+          <div class="centre">
+            <ul id="menu">
+              <div class="leftside">
+                <li><a href="{RSS}"><img src="http://static.tumblr.com/fkm6sn6/kKqlbt3cm/rss_12x12.png" alt="Subscribe via RSS"/></li>
+                <li><a href="/archive"><img src="http://static.tumblr.com/fkm6sn6/25albt3b7/calendar_12x12.png" alt="View Archive"/></a></li>
+									{block:AskEnabled}<li><a href="/ask"><img src="http://static.tumblr.com/fkm6sn6/prSlep19w/question_12x12.png" alt="Ask a question"/></li>{/block:AskEnabled}
+									{block:SubmissionsEnabled}<li><a href="/submit"><img src="http://static.tumblr.com/fkm6sn6/xB1lep6ba/upload12x12.png" alt="Submit a post"/></li>{/block:SubmissionsEnabled}
+              </div>
+              <div class="rightside">
+                <li>
+                  <form id="search" method="get" action="/search">
+                    <fieldset>
+                      <input type="text" value="" id="search_field" name="q" class="empty">
+                        <input type="submit" value="Search" id="search_button">
+                          </fieldset>
+                          </form>
+                          </li>
+                          </div>
+                          <div class="clear"></div>
+                          </ul>
+                          </div>
+                          </div>
+                          <div id="openCloseWrap">
+                            <a href="#" class="topMenuAction" id="topMenuImage">
+                              <img src="http://static.tumblr.com/fkm6sn6/0n9lb7jpq/topnavbutton.png" alt="Show Navigation" />
+                            </a>
+                          </div>
+                          </div>
+                          </div>	 <!-- END OF NAVIGATION DRAWER -->  {/block:IfTopNavigationDrawer}
+
+				{block:IfToTopButton}<div id="toTop"></div> <!-- Scroll to top Ribbon -->{/block:IfToTopButton}
+
+                          <div id="main" {block:PermalinkPage}class="single"{/block:PermalinkPage}>
+
+                               <div id="innerborder">
+
+                              <div class="header centre">
+                                <a href="/"><img src="{image:Header}" class="headerimage" alt=""/></a>
+
+					{block:IfShowTitle}<h1 class="heading"><a href="/">{Title}</a></h1>{/block:IfShowTitle}
+
+					{block:HasPages}<ul class="pages">{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}</ul>{/block:HasPages}
+
+					{block:Description}<div class="subtitle">{Description}</div>{/block:Description}
+
+                                <div class="linebreak"></div>
+</script><span id="the_like"><fb:like href="www.jacksnaps.com" show_faces="true" width="450" font="arial"></fb:like></span>
+                              </div> <!-- Subtitle -->
+
+				{block:SearchPage} <!-- Search results page -->
+                              <div class="centre">
+                                <p>Search results found: {SearchResultCount}</p>
+                              </div>
+		            {block:NoSearchResults}
+                              <div class="centre">
+                                <h3>Sorry!</h3>
+                              </div>
+		           	{/block:NoSearchResults}
+	           	{/block:SearchPage}
+
+				{block:IndexPage}
+				{block:IfNotSingleColumn}
+                              <div id="mason">
+				{/block:IfNotSingleColumn}
+                                <!-- Masonry JS for Columns -->
+				{/block:IndexPage}
+
+				    {block:Posts}
+
+	    				{block:Text}
+                                <div class="post">
+								{block:IndexPage}
+								{block:Title}
+                                  <h3><a href="{Permalink}">{Title}</a></h3>
+								{/block:Title}
+                                  <div class="bodytype">
+									{Body}
+                                  </div>
+                                  <div class="timestamp"><a href="{Permalink}">{TimeAgo}</a>{block:NoteCount} - <a href="{Permalink}"><img src="http://static.tumblr.com/fkm6sn6/vYolbws6r/heart_fill_8x7.png"> {NoteCount}</a>{/block:NoteCount}</div>
+                                  <div class="clear"></div>
+								{/block:IndexPage}
+
+								{block:PermalinkPage}
+                                  <div class="centre">
+									{block:Title}<h3><a href="{Permalink}">{Title}</a></h3>{/block:Title}
+                                  </div>
+                                  <div class="bodytype">
+									{Body}
+                                  </div>
+								{block:PostNotes} {PostNotes}{/block:PostNotes}
+                                  <div class="centre">
+                                    <div class="timestamp">{TimeAgo}</div>
+                                  </div>
+								{/block:PermalinkPage}
+                                </div>
+						{/block:Text} <!-- end NORMAL TEXT POST -->
+
+						{block:Quote}
+							{block:IndexPage}
+                                <div class="post quote {length}">
+                                  <h3 class="quote"><a href="{Permalink}">{Quote}</a></h3>
+									{block:Source}<p>{Source}</p>{/block:Source}
+                                  <div class="timestamp_right">
+                                    <a href="{Permalink}">{TimeAgo}</a>{block:NoteCount} - <a href="{Permalink}"><img src="http://static.tumblr.com/fkm6sn6/vYolbws6r/heart_fill_8x7.png"> {NoteCount}</a>{/block:NoteCount}</a>
+                                  </div>
+                                </div>
+							{block:IndexPage}
+
+							{block:PermalinkPage}
+                                <div class="post permalink">
+                                  <h3>{Quote}</h3>
+									{block:Source}<p class="centre">{Source}</p>{/block:Source}
+                                  <div class="timestamp centre"><a href="{Permalink}">Posted {TimeAgo}</a></div>
+                                </div>
+								{block:PostNotes} {PostNotes}{/block:PostNotes}
+							{/block:PermalinkPage}
+						{/block:Quote} <!-- end QUOTE -->
+
+					    {block:Photo}
+                                <div class="post">
+					            {block:IndexPage}
+                                  <div class="photo">
+						            	{block:IfNotSingleColumn}
+                                    <img src="{PhotoURL-250}" alt="{PhotoAlt}"/>
+						            	{/block:IfNotSingleColumn}
+						            	{block:IfSingleColumn}
+                                    <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+						            	{/block:IfSingleColumn}
+							            	{block:Caption}
+							              	  {Caption}
+							            	{/block:Caption}
+                                  </div>
+
+                                  <div class="timestamp" style="margin-top:10px;"><a href="{Permalink}">{TimeAgo}</a>{block:NoteCount} - <a href="{Permalink}"><img src="http://static.tumblr.com/fkm6sn6/vYolbws6r/heart_fill_8x7.png"> {NoteCount}</a>{/block:NoteCount}</div>
+
+					            {/block:IndexPage}
+
+								{block:PermalinkPage}
+                                  <div class="centre">
+                                    <p>{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>{LinkCloseTag}</p>
+						            	{block:Caption}
+						              	  {Caption}
+						            	{/block:Caption}
+                                    <p class="timestamp" style="margin-top:10px;"><a href="{Permalink}">{TimeAgo}</a></p>
+                                  </div>
+					            {/block:PermalinkPage}
+                                </div>
+					    {/block:Photo} <!-- end PHOTO POST -->
+
+						{block:Video}
+                                <div class="post">
+					           {block:IndexPage}
+                                  <div class="video">
+						           		{block:IfNotSingleColumn}
+						            	{Video-250}
+						            	{/block:IfNotSingleColumn}
+						           		{block:IfSingleColumn}
+						            	{Video-500}
+						            	{/block:IfSingleColumn}
+						           		{block:Caption}
+								   	    	{Caption}
+								        {/block:Caption}
+                                    <span class="timestamp" style="margin-top:10px;"><a href="{Permalink}">{TimeAgo}</a>{block:NoteCount} - <a href="{Permalink}"><img src="http://static.tumblr.com/fkm6sn6/vYolbws6r/heart_fill_8x7.png"> {NoteCount}</a>{/block:NoteCount}</span>
+                                  </div>
+					           {/block:IndexPage}
+
+					           {block:PermalinkPage}
+                                  <div class="centre">
+                                    <p>{Video-500}</p>
+						          		{block:Caption}
+								   	    	{Caption}
+								        {/block:Caption}
+                                    <p class="timestamp" style="margin-top:10px;"><a href="{Permalink}">{TimeAgo}</a></p>
+                                  </div>
+					           {/block:PermalinkPage}
+                                </div>
+				        {/block:Video}  <!-- end VIDEO POST -->
+
+				        {block:Audio}
+                                <div class="post">
+					        	{block:IndexPage}
+                                  <div class="audio">
+                                    <div class="player">{AudioPlayerWhite}</div>
+						          		{block:Caption}{Caption}{/block:Caption}
+                                    <div class="timestamp">{TimeAgo}{block:NoteCount} - <a href="{Permalink}"><img src="http://static.tumblr.com/fkm6sn6/vYolbws6r/heart_fill_8x7.png"> {NoteCount}</a>{/block:NoteCount}</div>
+                                  </div>
+					         	{/block:IndexPage}
+
+					         	{block:PermalinkPage}
+                                  <div class="centre">
+                                    <div class="player">{AudioPlayerWhite}</div>
+						          		{block:Caption}{Caption}{/block:Caption}
+                                    <span class="timestamp"><a href="{Permalink}">{TimeAgo}</a></span>
+                                  </div>
+					         	{/block:PermalinkPage}
+                                </div>
+				        {/block:Audio}  <!-- end AUDIO POST -->
+
+				        {block:Chat}
+                                <div class="post">
+                                  <div class="chat">
+					          		{block:IndexPage}
+                                    <table cellspacing="0">
+							              {block:Lines}
+                                      <tr class="user{UserNumber}">
+                                        <th>{block:Label}{Label}{/block:Label}</th>
+                                        <td>{Line}</td>
+                                      </tr>
+							              {/block:Lines}
+                                    </table>
+                                    <div class="timestamp"><a href="{Permalink}">{TimeAgo}</a>{block:NoteCount} - <a href="{Permalink}"><img src="http://static.tumblr.com/fkm6sn6/vYolbws6r/heart_fill_8x7.png"> {NoteCount}</a>{/block:NoteCount}</div>
+						            {/block:IndexPage}
+
+						         	{block:PermalinkPage}
+                                    <table cellspacing="0" width="610px">
+							              {block:Lines}
+                                      <tr class="user{UserNumber}">
+                                        <th>{block:Label}{Label}{/block:Label}</th>
+                                        <td>{Line}</td>
+                                      </tr>
+							              {/block:Lines}
+                                    </table>
+                                    <div class="centre">
+                                      <span class="timestamp"><a href="{Permalink}">{TimeAgo}</a></span>
+                                    </div>
+						            {/block:PermalinkPage}
+                                  </div>
+                                </div>
+				        {/block:Chat}  <!-- end CHAT POST -->
+
+	                   {block:Link}
+                                <div class="post link">
+                                  <h3><a href="{URL}" {Target}>{Name}</a></h3>
+		                        {block:Description}
+		                           {Description}
+		                        {/block:Description}
+                                  <div class="timestamp">{TimeAgo}{block:NoteCount} - <a href="{Permalink}"><img src="http://static.tumblr.com/fkm6sn6/vYolbws6r/heart_fill_8x7.png"> {NoteCount}</a>{/block:NoteCount}</div>
+                                </div>
+		               {/block:Link} <!-- end LINK POST -->
+
+					{/block:Posts}
+
+                                <div class="clear"></div>
+
+
+
+			{block:IndexPage}{block:IfNotSingleColumn}</div>{/block:IfNotSingleColumn} <!-- End Mason -->{/block:IndexPage}
+
+                              <div class="footer">
+                                <p><img src="http://static.tumblr.com/fkm6sn6/r6Bl9bdgd/footer_bullet.png" alt=""/></p>
+                                <p class="pagination">
+					{block:NextPage}<a href="{NextPage}">&larr; Older</a>{/block:NextPage}
+					{CurrentPage}&nbsp;&frasl;&nbsp;{TotalPages}
+					{block:PreviousPage}<a href="{PreviousPage}">&rarr; Newer</a>{/block:PreviousPage}
+                                </p>
+                                <p>- Inkhorn theme by <a href="http://ptcampbell.me/">PT Campbell</a> -</p>
+                              </div> <!-- end FOOTER -->
+
+                            </div> <!-- end main -->
+
+                            </body> <!-- CLOSE BODY -->
+
+                            </html>

@@ -80,9 +80,9 @@ class Jacksnaps {
   }
 
   public function emailNotice($subject, $body) {
-    echo("SENDING ALERT EMAIL (todo)");
-    echo("Subject: " . $subject);
-    echo("Body: " . $body);
+    echo("SENDING ALERT EMAIL (todo)\n");
+    echo("Subject: " . $subject . "\n");
+    echo("Body: " . $body . "\n");
   }
 
   private function mark_as_used($text, $image) {
